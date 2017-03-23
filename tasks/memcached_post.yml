@@ -1,0 +1,6 @@
+---
+- name: Drop memcached configuation file
+  template:
+    src: "{{ memcached_template_file }}"
+    dest: "{{ memcached_config_filepath }}"
+  notify: Restart Memcached Service

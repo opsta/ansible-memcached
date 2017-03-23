@@ -1,8 +1,8 @@
 ---
-memcached_service_name: keepalived
+memcached_service_name: memcached
 
-memcached_template_file: keepalived.conf.j2
-memcached_container_config_path: /etc/keepalived/keepalived.conf
-memcached_instance: "{{ app_service_name | default('haproxy-test') }}"
-memcached_auth_pass: CHANGEME
-memcached_interface: eth0
+
+memcached_config_path: /etc
+memcached_config_file: memcached.conf
+memcached_config_filepath: "{{ memcached_config_path }}/{{ memcached_config_file }}"
+memcached_template_file: "{{ memcached_config_file }}.j2"
