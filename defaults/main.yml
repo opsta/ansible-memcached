@@ -6,3 +6,10 @@ memcached_config_path: /etc
 memcached_config_file: memcached.conf
 memcached_config_filepath: "{{ memcached_config_path }}/{{ memcached_config_file }}"
 memcached_template_file: "{{ memcached_config_file }}.j2"
+
+memcached_log_filepath: /var/log/memcached/memcached.log
+memcached_user_daemon: memcache
+memcached_megs_memory_used: 64
+memcached_num_threads: 4
+memcached_port: 11211
+memcached_incoming_connection: 1024
