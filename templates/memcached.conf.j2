@@ -47,7 +47,7 @@ logfile {{ memcached_log_filepath }}
 # For replication
 # Require extra patch replication
 {% for host in groups[group_names[-1]] %}
-{% if hostvars[host].ansible_default_ipv4.address != ansible_default_ipv4.address %}
-# -x {{ hostvars[host].ansible_default_ipv4.address }}
+{% if hostvars[host].ansible_host != ansible_host %}
+# -x {{ hostvars[host].ansible_host }}
 {% endif %}
 {% endfor %}
